@@ -34,7 +34,23 @@ function enviarMernsaje(Texto) {
         message: Texto
     });
 }
-enviarMernsaje("Abrio la pagina")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//enviarMernsaje("Abrio la pagina")
 
 //window.addEventListener('beforeunload', function (e) {
 //    // Coloca tu lógica aquí
