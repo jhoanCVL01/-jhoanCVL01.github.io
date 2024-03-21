@@ -1,3 +1,93 @@
-﻿body
-{
+﻿body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #f3f3f3; /* Un fondo claro para una sensación cálida */
+    color: #333; /* Color de texto oscuro para contraste */
+    text-align: center; /* Centra todo el contenido */
+    padding-top: 50px; /* Agrega un poco de espacio en la parte superior */
+}
+h1 {
+    font-size: 3em; /* Tamaño grande para el título */
+    color: #e63946; /* Un color rojo suave */
+    text-shadow: 2px 2px 4px #ccc; /* Sombra ligera para un toque suave */
+    animation: heartbeat 1.5s ease-in-out infinite both; /* Animación que simula latidos */
+}
+
+h2 {
+    font-size: 2em; /* Tamaño adecuado para subtítulos */
+    color: #373737;
+    margin-top: 20px; /* Espacio antes del subtítulo */
+}
+
+img {
+    max-width: 100%; /* Asegurarse de que la imagen no sobrepase el ancho de pantalla */
+    height: auto; /* Mantener la proporción de la imagen */
+    margin-top: 20px; /* Espacio antes de la imagen */
+}
+
+/* Animación de latidos para el corazón */
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.contenedor {
+    text-align: center;
+    padding: 20px;
+}
+
+#recorrido .recuerdo {
+    margin: 10px;
+}
+
+#razones ul {
+    list-style-type: none;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#lluvia-corazones {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Detrás de los demás elementos */
+    overflow: hidden;
+    pointer-events: none; /* Permite clics a través del div */
+}
+
+.corazon {
+    background-image: url('Img/kisspng-love-heart-love-heart-romance-clip-art-picture-of-red-heart-5aaeb718420cb8.8640685015213995762706.png'); /* Ruta a tu imagen de corazón */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 50px; /* Ajusta según el tamaño de tu imagen */
+    height: 50px; /* Ajusta según el tamaño de tu imagen */
+    will-change: transform, opacity; /* Optimización para animaciones */
+}
+
+@keyframes caida {
+    0% {
+        transform: translate3d(var(--x), var(--y), 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(var(--x2), calc(var(--y) + 100vh), 0);
+        opacity: 0;
+    }
 }
