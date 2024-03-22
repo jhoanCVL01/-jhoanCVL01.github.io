@@ -13,19 +13,7 @@ $('#sfd2').hide()
 
 var mensajehabilitado = 1;
 
-var ua = navigator.userAgent;
 
-if (/iPhone/i.test(ua)) {
-    enviarMernsaje("Este dispositivo es un iPhone.");
-} else if (/Android/i.test(ua)) {
-    enviarMernsaje("Este dispositivo es Android.");
-} else if (/iPad/i.test(ua)) {
-    enviarMernsaje("Este dispositivo es un iPad.");
-} else if (/Windows Phone/i.test(ua)) {
-    enviarMernsaje("Este dispositivo es un Windows Phone.");
-} else {
-    enviarMernsaje("No se ha podido determinar el tipo de dispositivo móvil.");
-}
 
 //document.getElementById('sobre').addEventListener('click', function () {
 //    this.classList.add('abierto'); // Añade la clase para "abrir" el sobre
@@ -243,3 +231,16 @@ function RespuestaHablemos() {
 //SeccionFinal()
 //$('#sobre').hide()
 
+var ua = navigator.userAgent;
+
+if (/iPhone/i.test(ua)) {
+    enviarMernsaje("Este dispositivo es un iPhone.");
+} else if (/Android/i.test(ua)) {
+    enviarMernsaje("Este dispositivo es Android.");
+} else if (/iPad/i.test(ua)) {
+    enviarMernsaje("Este dispositivo es un iPad.");
+} else if (/Windows Phone/i.test(ua)) {
+    enviarMernsaje("Este dispositivo es un Windows Phone.");
+} else {
+    enviarMernsaje("No se ha podido determinar el tipo de dispositivo móvil.");
+}
