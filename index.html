@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Prueba</title>
+    <title>Estefania</title>
     <link rel="icon" href="img/png-transparent-heart-shaped-heart-to-heart-heart-heart-shaped-clipart-thumbnail.png" type="image/x-icon">
     <link href="StyleSheet.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -16,15 +16,86 @@
 <body>
     <div id="lluvia-corazones"></div>
     <div class="contenedor">
-        <!-- Página de Bienvenida -->
-        <div id="bienvenida">
-            <h1>Para Garfield ❤️</h1>
-            <!--<img src="Img/Captura de pantalla 2024-03-21 121708.png" />-->
-            <h2>Espero que estes bien hoy y siempre. He preparado un pequeño recorrido para ti<br />¿Deseas Acompañarme?</h2>
-            <!--<button id="empezar">Empezar el Recorrido</button>-->
-        </div>
+        <div id="DivNo">
+            <h2>Comprendo, y disculpa las molestias</h2>
+            <button id="botonNo" onclick="window.close()">Cerrar</button>
 
-      
+        </div>
+        <div id="ContenidoTotal">
+            <!-- Página de Bienvenida -->
+            <div class="sobre" id="sobre">
+                <h2>¡Hola, tienes un nuevo mensaje!</h2>
+                <img src="Img/Sobre.png" alt="Sobre cerrado" style="max-width: 500px; border-radius: 10%;" />
+            </div>
+            <div class="contenido-oculto" id="contenidoOculto" style="display: none;">
+                <p>¡Aquí está tu mensaje!</p>
+                <!-- Otros elementos que desees incluir -->
+            </div>
+            <div id="bienvenida">
+                <h1>Para Garfield ❤️</h1>
+                <h3>Del idiota ✌️</h3>
+                <!--<img src="Img/Captura de pantalla 2024-03-21 121708.png" />-->
+                <h2>Hola, espero que estes bien hoy y siempre. He preparado un pequeño recorrido para ti<br />¿Deseas Acompañarme?</h2>
+                <div class="botones-respuesta">
+                    <button id="botonNo" onclick="Cerrar('No primer pregunta')">No</button>
+                    <button id="botonSi" onclick="ClickSi()">Sí</button>
+                </div>
+            </div>
+
+            <div id="recorrido">
+                <div id="DivSi">
+                    <h2>Gracias por aceptar </h2>
+                    <!--<button id="botonNo" onclick="window.close()">Cerrar</button>-->
+                </div>
+                <div id="ContentSi">
+                    <h2>De ante mano quiero ser sincero y directo, y la razon de esto es por que quiero hacer mi ultimo intento</h2>
+                    <h2>¿Te animas a escucharme?</h2>
+                    <div class="botones-respuesta">
+                        <button id="botonNo" onclick="Cerrar('No segunda pregunta')">No</button>
+                        <button id="botonSi" onclick="ClickSi2()">Sí</button>
+                    </div>
+
+                    <!--<button id="botonNo" onclick="window.close()">Cerrar</button>-->
+                </div>
+            </div>
+            <div id="recorrido2" class="Oculto">
+                <img src="Img/Captura de pantalla 2024-03-21 165956.png" class="imagen-redonda" />
+                <h2>Me alegra mucho que te animaras</h2>
+                <h3>
+                    Antes que nada,quiero que sepas que seguiras siendo la persona mas especial e importante para mi,
+                    te seguire querriendo como desde el primer dia.
+                </h3>
+                <button id="botonNo" onclick="Cerrar('No tercera pregunta')">Mejor no</button>
+                <button id="botonSi" onclick="EmpezarReocrrido()">Continuar >> </button>
+            </div>
+
+            <div id="inicio" class="Oculto">
+                <img src="Img/Captura de pantalla 2024-03-21 171342.png" />
+                <h2>Sin mas preambulos, ¿Empezamos?</h2>
+                <h3>
+                </h3>
+            </div>
+            <div id="recuerdos" class="Oculto">
+                <div class="contenedor-slider">
+                    <div class="slide" id="slide-1">
+                        <h3>
+                            Estefania eres mi mayor tesoro
+                        </h3>
+                    </div>
+                    <div class="slide" id="slide-2" style="display: none;">Contenido del Slide 2</div>
+                    <!-- Agrega más slides según sea necesario -->
+                    <div class="contenedor-botones">
+                        <button class="boton-navegacion" onclick="moverSlide(-1)">&#10094;</button>
+                        <button class="boton-navegacion" onclick="moverSlide(1)">&#10095;</button>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <button id="botonNo" onclick="Cerrar('Se arrepintio')">Ya no quiero</button>
+
+            </div>
+        </div>
+        <!--<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/33wblGwNE0NEXBzymM9WXS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
     </div>
     <script src="Script.js"></script>
 

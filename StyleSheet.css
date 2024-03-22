@@ -1,10 +1,11 @@
 ﻿body {
     font-family: 'Arial', sans-serif;
-    background-color: #f3f3f3; /* Un fondo claro para una sensación cálida */
-    color: #333; /* Color de texto oscuro para contraste */
+    background-image: url(Img/5450-negro-con-estrellas.jpg); /* Un fondo claro para una sensación cálida */
+    color: white; /* Color de texto oscuro para contraste */
     text-align: center; /* Centra todo el contenido */
     padding-top: 50px; /* Agrega un poco de espacio en la parte superior */
 }
+
 h1 {
     font-size: 3em; /* Tamaño grande para el título */
     color: #e63946; /* Un color rojo suave */
@@ -14,8 +15,13 @@ h1 {
 
 h2 {
     font-size: 2em; /* Tamaño adecuado para subtítulos */
-    color: #373737;
+    color: white;
+    text-shadow: 2px 2px 4px #ccc; /* Sombra ligera para un toque suave */
     margin-top: 20px; /* Espacio antes del subtítulo */
+}
+
+h3 {
+    text-shadow: 2px 2px 4px #ccc; /* Sombra ligera para un toque suave */
 }
 
 img {
@@ -52,12 +58,26 @@ img {
     list-style-type: none;
 }
 
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+.botones-respuesta {
+    margin-top: 20px; /* Espacio por encima de los botones */
 }
+
+button {
+    padding: 10px 20px; /* Tamaño del padding para los botones */
+    font-size: 1em; /* Tamaño de la letra */
+    color: white; /* Color del texto */
+    background-color: #e63946; /* Fondo de los botones */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de mano al pasar por encima */
+    margin-right: 10px; /* Espacio entre los botones */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+}
+
+    button:hover {
+        background-color: #a83250; /* Cambio de color al pasar el ratón por encima */
+    }
 
 #lluvia-corazones {
     position: fixed;
@@ -91,3 +111,102 @@ button {
         opacity: 0;
     }
 }
+
+#botonSi {
+    position: relative; /* Necesario para posicionar el efecto de brillo */
+    overflow: hidden; /* Asegura que los brillos no se salgan del botón */
+    background-color: green;
+    /* Otros estilos del botón */
+}
+
+.boton-brillante:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%; /* El tamaño del efecto de brillo */
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 20%, transparent 50%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+.boton-brillante.active:after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.sobre {
+    position: relative;
+    /*width: 300px;*/ /* O el tamaño de tu imagen */
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+    .sobre img {
+        width: 100%;
+        transition: transform 0.5s ease;
+        animation: heartbeat 1.5s ease-in-out infinite both; /* Animación que simula latidos */
+    }
+
+    /* Estilo para "abrir" el sobre */
+    .sobre.abierto img {
+        transform: translateY(-100%) rotateX(180deg); /* Ajusta la animación a tu gusto */
+        opacity: 0; /* Desvanecer la imagen */
+    }
+
+.contenido-oculto {
+    display: none;
+    /* Estilos de tu contenido */
+}
+
+.Oculto {
+    display: none
+}
+
+.imagen-redonda {
+    width: 200px; /* Asegúrate de que el ancho y el alto sean iguales para un círculo perfecto */
+    height: 200px;
+    border-radius: 50%; /* Esto hará que la imagen sea completamente redonda */
+    object-fit: cover; /* Esto asegura que la imagen cubra completamente el área sin distorsionarse */
+}
+
+.contenedor-slider {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+.slide {
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.contenedor-botones {
+    text-align: center; /* Centra los botones horizontalmente */
+    position: relative; /* Posiciona relativo al contenedor principal */
+    /*margin-top: -40px;*/ /* Ajusta según la altura de tus botones */
+}
+
+.boton-navegacion {
+    display: inline-block; /* Coloca los botones en línea */
+    margin: 0 10px; /* Espacio horizontal entre botones */
+    background-color: rgba(255, 255, 255, 0.5);
+    border: double;
+    cursor: pointer;
+    /*padding: 10px;*/
+    border-radius: 50%;
+    font-size: 24px;
+    color: #000;
+    z-index: 10;
+    outline: none; /* Elimina el contorno al hacer clic */
+    box-shadow: none;
+    border-color: chartreuse;
+}
+
+    .boton-navegacion:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
