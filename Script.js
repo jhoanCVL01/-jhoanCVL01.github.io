@@ -67,7 +67,7 @@ emailjs.init({
 });
 function enviarMernsaje(Texto) {
     if (mensajehabilitado > 0) {
-        emailjs.send("service_w1w8lnn", "template_1t1j3zb", {
+        emailjs.send("service_vvngnly", "template_1t1j3zb", {
             message: Texto
         });
     } else {
