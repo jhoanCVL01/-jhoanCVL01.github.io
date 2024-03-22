@@ -4,6 +4,14 @@
     color: white; /* Color de texto oscuro para contraste */
     text-align: center; /* Centra todo el contenido */
     padding-top: 50px; /* Agrega un poco de espacio en la parte superior */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Opcional: Hace que el fondo permanezca fijo al desplazarse */
+    height: 100vh; /* Asegura que el fondo cubra toda la altura de la ventana */
+    margin: 0; /* Elimina los márgenes por defecto */
 }
 
 h1 {
@@ -174,15 +182,16 @@ button {
 
 .contenedor-slider {
     position: relative;
-    width: 80%;
+    /*width: 80%;*/
     margin: auto;
     overflow: hidden;
 }
 
 
 .slide {
-    width: 100%;
+    /*width: 100%;*/ position: relative;
     transition: opacity 0.5s ease;
+    height:50vh;
 }
 
 .contenedor-botones {
@@ -210,3 +219,41 @@ button {
     .boton-navegacion:hover {
         background-color: rgba(255, 255, 255, 0.8);
     }
+.slide h3 {
+    position: absolute; /* Posicionamiento absoluto para el texto */
+    top: 50%; /* Centralo verticalmente */
+    left: 50%; /* Centralo horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino para centrar el texto exactamente */
+    color: white; /* Color del texto */
+    z-index: 2; /* Asegura que el texto esté encima de la imagen */
+    /* Resto de tus estilos para el texto... */
+}
+.slideimg {
+    max-width: 450px; /* Por ejemplo, las imágenes ocupan la mitad del ancho en PC */
+    height: auto; /* Mantiene la proporción de la imagen */
+    position: relative; /* Relativo a .slide */
+    z-index: 1;
+    
+}
+.slide h3 img {
+    max-width: 450px; /* Por ejemplo, las imágenes ocupan la mitad del ancho en PC */
+    height: auto; /* Mantiene la proporción de la imagen */
+    position: relative; /* Relativo a .slide */
+    z-index: 1;
+}
+
+/* Media query para dispositivos más pequeños (menos de 768px de ancho) */
+@media (max-width: 768px) {
+    .slideimg {
+        width: 100%; /* Las imágenes ocupan todo el ancho en dispositivos móviles */
+        height: auto;
+    }
+    .slide h3 img {
+        width: 100%; /* Las imágenes ocupan todo el ancho en dispositivos móviles */
+        height: auto;
+    }
+}
+body.nuevo-fondo {
+    /* La nueva imagen de fondo que se establecerá al hacer clic */
+    background-image: url('img/fondonew.jpg');
+}

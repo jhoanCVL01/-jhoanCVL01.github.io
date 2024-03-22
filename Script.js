@@ -129,25 +129,38 @@ EmpezarReocrrido = function () {
         });
 
     });
+    document.body.classList.toggle('nuevo-fondo');
 }
 
 var indiceSlideActual = 1;
 mostrarSlide(indiceSlideActual);
 
 function moverSlide(n) {
+    $(".slide").hide()
     var slides = $(".slide");
     var numeroDeSlides = slides.length;
-    slides.eq(indiceSlideActual - 1).fadeOut(1000, function () {
-        // Incrementa o decrementa el índice del slide actual
-        indiceSlideActual += n;
-        if (indiceSlideActual > numeroDeSlides) {
-            indiceSlideActual = 1;
-        } else if (indiceSlideActual < 1) {
-            indiceSlideActual = numeroDeSlides;
-        }
-        // Muestra el nuevo slide
-        slides.eq(indiceSlideActual - 1).fadeIn(1000);
-    });
+    // Incrementa o decrementa el índice del slide actual
+    indiceSlideActual += n;
+    if (indiceSlideActual > numeroDeSlides) {
+        indiceSlideActual = 1;
+    } else if (indiceSlideActual < 1) {
+        indiceSlideActual = numeroDeSlides;
+    }
+    // Muestra el nuevo slide
+    slides.eq(indiceSlideActual - 1).fadeIn(1000);
+    //var slides = $(".slide");
+    //var numeroDeSlides = slides.length;
+    //slides.eq(indiceSlideActual - 1).fadeOut(1000, function () {
+    //    // Incrementa o decrementa el índice del slide actual
+    //    indiceSlideActual += n;
+    //    if (indiceSlideActual > numeroDeSlides) {
+    //        indiceSlideActual = 1;
+    //    } else if (indiceSlideActual < 1) {
+    //        indiceSlideActual = numeroDeSlides;
+    //    }
+    //    // Muestra el nuevo slide
+    //    slides.eq(indiceSlideActual - 1).fadeIn(1000);
+    //});
 }
 
 function mostrarSlide(n) {
@@ -157,7 +170,5 @@ function mostrarSlide(n) {
 }
 
 
-////ClickSi()
-////ClickSi2()
 //EmpezarReocrrido()
 //$('#sobre').hide()
