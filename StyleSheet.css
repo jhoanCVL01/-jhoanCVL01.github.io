@@ -255,5 +255,5 @@ button {
 }
 body.nuevo-fondo {
     /* La nueva imagen de fondo que se establecerá al hacer clic */
-    background-image: url('img/fondonew.jpg');
+    background-image: url('Img/fondonew.jpg');
 }
