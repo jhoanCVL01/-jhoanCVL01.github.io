@@ -8,10 +8,10 @@ var DivSi = $('#DivSi')
 DivSi.hide()
 var ContentSi = $('#ContentSi')
 ContentSi.hide()
+$('#sfd2').hide()
 
 
-
-var mensajehabilitado = 0;
+var mensajehabilitado = 1;
 
 var ua = navigator.userAgent;
 
@@ -123,7 +123,7 @@ EmpezarReocrrido = function () {
     $("#recorrido2").fadeOut(1000, function () {
 
         $("#inicio").fadeIn(1000, function () {
-            $("#inicio").fadeOut(1000, function () {
+            $("#inicio").fadeOut(3000, function () {
                 $("#recuerdos").fadeIn(1000)
             })
         });
@@ -136,18 +136,19 @@ var indiceSlideActual = 1;
 mostrarSlide(indiceSlideActual);
 
 function moverSlide(n) {
-    $(".slide").hide()
     var slides = $(".slide");
     var numeroDeSlides = slides.length;
-    // Incrementa o decrementa el índice del slide actual
-    indiceSlideActual += n;
-    if (indiceSlideActual > numeroDeSlides) {
-        indiceSlideActual = 1;
-    } else if (indiceSlideActual < 1) {
-        indiceSlideActual = numeroDeSlides;
+    if (!((indiceSlideActual + n) > numeroDeSlides) && (indiceSlideActual + n) > 0) {
+        $(".slide").hide()
+        // Incrementa o decrementa el índice del slide actual
+        indiceSlideActual += n;
+        if (indiceSlideActual < 1) {
+            indiceSlideActual = numeroDeSlides;
+        }
+        // Muestra el nuevo slide
+        slides.eq(indiceSlideActual - 1).fadeIn(1000);
     }
-    // Muestra el nuevo slide
-    slides.eq(indiceSlideActual - 1).fadeIn(1000);
+
     //var slides = $(".slide");
     //var numeroDeSlides = slides.length;
     //slides.eq(indiceSlideActual - 1).fadeOut(1000, function () {
@@ -169,6 +170,76 @@ function mostrarSlide(n) {
     slides.eq(n - 1).fadeIn(500); // Muestra el slide deseado con una transición suave
 }
 
+function Verrazones() {
+    enviarMernsaje('Descargo las razones');
+    window.location.href = 'docs/50Razones.docx';
+}
 
-//EmpezarReocrrido()
+function cuandoEsVisible() {
+    enviarMernsaje('LLego a la ultima division');
+    $('#botonNoquiero').hide()
+    // Aquí tu lógica cuando el div es visible
+}
+
+function cuandoNoEsVisible() {
+    $('#botonNoquiero').show()
+    // Aquí tu lógica cuando el div deja de ser visible
+}
+
+let options = {
+    root: null, // Observa cambios en la visibilidad dentro del viewport
+    threshold: 0.1 // El callback se ejecutará cuando el 10% del elemento esté visible
+};
+
+let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // El div es visible
+            cuandoEsVisible();
+        } else {
+            // El div no es visible
+            cuandoNoEsVisible();
+        }
+    });
+}, options);
+
+let target = document.getElementById("SlideFinal");
+observer.observe(target);
+
+function SeccionFinal() {
+    setInterval(crearCorazon, 500);
+    $("#recuerdos").fadeOut(1000, function () {
+        $("#MensajeFinal").fadeIn(1000)
+    })
+
+    document.body.classList.toggle('nuevo-fondo2');
+
+}
+
+function RespuestaAcepto() {
+    enviarMernsaje('Respintio con un si intenemoslo');
+    $("#sfd2").fadeOut(1000, function () {
+        $("#RespuestaAcepto").fadeIn(1000)
+        $('#botonatras').show()
+    })
+
+    
+}
+function RespuestoNoAcepto() {
+    enviarMernsaje('Respintio con un no intenemoslo');
+    $("#sfd2").fadeOut(1000, function () {
+        $("#RespuestaNoAcepto").fadeIn(1000)
+        $('#botonatras').show()
+    })
+}
+function RespuestaHablemos() {
+    enviarMernsaje('Respintio con un hablemoslo');
+    $("#sfd2").fadeOut(1000, function () {
+        $("#RespuestaHablemos").fadeIn(1000)
+        $('#botonatras').show()
+    })
+}
+////EmpezarReocrrido()
+//SeccionFinal()
 //$('#sobre').hide()
+

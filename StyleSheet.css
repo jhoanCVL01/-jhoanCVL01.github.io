@@ -126,6 +126,13 @@ button {
     background-color: green;
     /* Otros estilos del botón */
 }
+#respuestaHablemos {
+    position: relative; /* Necesario para posicionar el efecto de brillo */
+    overflow: hidden; /* Asegura que los brillos no se salgan del botón */
+    background-color: cornflowerblue;
+    /* Otros estilos del botón */
+}
+
 
 .boton-brillante:after {
     content: '';
@@ -191,7 +198,26 @@ button {
 .slide {
     /*width: 100%;*/ position: relative;
     transition: opacity 0.5s ease;
-    height:50vh;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5%;
+}
+.slide2 {
+    position: relative;
+    transition: opacity 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5%;
+    /* height: 100vh; */
+    padding: 10px;
+    /*text-align: justify;*/
+}
+.slide3 {
+    position: relative;
+    transition: opacity 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5%;
+    /* height: 100vh; */
+    padding: 10px;
 }
 
 .contenedor-botones {
@@ -228,6 +254,17 @@ button {
     z-index: 2; /* Asegura que el texto esté encima de la imagen */
     /* Resto de tus estilos para el texto... */
 }
+.slide2 h3 {
+    /*position: absolute;*/ /* Posicionamiento absoluto para el texto */
+    /*top: 50%;*/ /* Centralo verticalmente */
+    /*left: 50%;*/ /* Centralo horizontalmente */
+    /*transform: translate(-50%, -50%);*/ /* Ajuste fino para centrar el texto exactamente */
+    color: white; /* Color del texto */
+    z-index: 2; /* Asegura que el texto esté encima de la imagen */
+    /* Resto de tus estilos para el texto... */
+    color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Resplandor blanco */
+}
 .slideimg {
     max-width: 450px; /* Por ejemplo, las imágenes ocupan la mitad del ancho en PC */
     height: auto; /* Mantiene la proporción de la imagen */
@@ -256,4 +293,8 @@ button {
 body.nuevo-fondo {
     /* La nueva imagen de fondo que se establecerá al hacer clic */
     background-image: url('Img/fondonew.jpg');
+}
+body.nuevo-fondo2 {
+    /* La nueva imagen de fondo que se establecerá al hacer clic */
+    background-image: url('Img/Fondo2.jpg');
 }
