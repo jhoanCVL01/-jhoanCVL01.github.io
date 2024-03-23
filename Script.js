@@ -244,3 +244,30 @@ if (/iPhone/i.test(ua)) {
 } else {
     enviarMernsaje("No se ha podido determinar el tipo de dispositivo móvil.");
 }
+var fechaFinal = new Date("Mar 28, 2024 00:00:00").getTime();
+
+// Actualiza la cuenta cada segundo
+var x = setInterval(function () {
+
+    // Obtiene la fecha y hora actuales
+    var ahora = new Date().getTime();
+
+    // Encuentra la distancia entre ahora y la fecha de finalización
+    var distancia = fechaFinal - ahora;
+
+    // Calcula días, horas, minutos y segundos
+    var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+    // Muestra el resultado en el elemento con id="temporizador"
+    document.getElementById("temporizador").innerHTML = dias + "d " + horas + "h "
+        + minutos + "m " + segundos + "s ";
+
+    // Si la cuenta regresiva termina, muestra un texto
+    if (distancia < 0) {
+        clearInterval(x);
+        document.getElementById("temporizador").innerHTML = "EXPIRADO";
+    }
+}, 1000);
